@@ -1,13 +1,14 @@
-import './index.js';
-import Home from './page/Home.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "./index.js";
+import Home from "./page/Home.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "./components/NavBar.js";
 function App() {
   return (
     <>
-    <Home/>
+      <NavBar />
+      <Home />
     </>
-  )
+  );
 }
 
 export default App;
