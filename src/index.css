@@ -3,3 +3,16 @@ html * {
   padding: 0;
   box-sizing: border-box;
 }
+
+.navbar-collapse {
+  justify-content: end;
+}
+.greeting{
+  text-align: center;
+  background-color:#fff176 ;
+}
+.botonMasMenos {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.4rem;
+}
