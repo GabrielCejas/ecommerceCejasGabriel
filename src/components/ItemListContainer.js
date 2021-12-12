@@ -1,34 +1,37 @@
-import React from "react";
-import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
-let img = require(`../assets/i9.webp`).default;
+import React, { useState } from "react";
+import ItemCount from "./ItemCount";
+
+const lista = [
+  {
+    name: "Procesador gamer Intel Core i9",
+    descripcion:
+      "Ejecuta con rapidez y eficiencia cualquier tipo de programa sin afectar el funcionamiento total del dispositivo.",
+    precio: 88000,
+    img: require(`../assets/i9.webp`).default,
+    stock: 10,
+  },
+  {
+    name: "Procesador gamer Intel Core i10",
+    descripcion:
+      "Ejecuta con rapidez y eficiencia cualquier tipo de programa sin afectar el funcionamiento total del dispositivo.",
+    precio: 108000,
+    img: require(`../assets/i9.webp`).default,
+    stock: 8,
+  },
+];
 
 const ItemListContainer = (props) => {
+  let [agregarCarrito, setAgregarCarrito] = useState("");
+
+  const onAdd = (cantidad) => {
+    setAgregarCarrito(
+      (agregarCarrito = `Se agrego al carrito ${cantidad} unidades`)
+    );
+  };
   return (
-      <>
+    <>
       <h2 className="greeting m-3 p-3">{props.greeting}</h2>
-    <Card style={{ width: "18rem" }} className="container m-5">
-      <Card.Img variant="top" src={img}/>
-      <Card.Body>
-        <Card.Title>{props.name}</Card.Title>
-        <Card.Text>
-          {props.descripcion}
-        </Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroupItem>{`$ ${props.precio}`}</ListGroupItem>
-      </ListGroup>
-      <Card.Body className="d-flex justify-content-between">
-        <Card.Link className="botonMasMenos" href="#">
-          +
-        </Card.Link>
-        <Card.Link className="botonMasMenos" href="#">
-          -
-        </Card.Link>
-      </Card.Body>
-      <Button variant="warning" className="m-3">
-        Agreagr al Carrito
-      </Button>
-    </Card>
+      <ItemCount list={lista} onAdd={onAdd} msj={agregarCarrito} />
     </>
   );
 };

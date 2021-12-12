@@ -10,9 +10,6 @@ function App() {
       <Home />
       <ItemListContainer
         greeting="Mercado Informatico"
-        name="Procesador gamer Intel Core i9"
-        descripcion="Ejecuta con rapidez y eficiencia cualquier tipo de programa sin afectar el funcionamiento total del dispositivo."
-        precio={88000}
       />
     </>
   );
