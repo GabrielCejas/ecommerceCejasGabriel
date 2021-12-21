@@ -1,6 +1,6 @@
 
 import { Container, Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import ItemCount from "./itemCount"
+
 
 const Item = ({lista}) => {
   return (
@@ -24,7 +24,6 @@ const Item = ({lista}) => {
               <ListGroup className="list-group-flush">
                 <ListGroupItem>{`Stock: ${lista.stock}`}</ListGroupItem>
               </ListGroup>
-              <ItemCount stock={lista.stock}/>
             </Card>
           );
         })}

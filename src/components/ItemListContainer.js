@@ -38,10 +38,11 @@ const ItemListContainer = (props) => {
   }, []);
 
   return (
-    <>
+    <div className="container">
       <h2 className="greeting m-3 p-3">{props.greeting}</h2>
+      <h3>Lista de productos</h3>
       <ItemList listas={listas} />
-    </>
+    </div>
   );
 };
 
