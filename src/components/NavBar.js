@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap/";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -11,21 +12,18 @@ const NavBar = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="mx-5" id="responsive-navbar-nav">
         <Nav className="nav">
-          <Nav.Link href="#Home">Home</Nav.Link>
-          <Nav.Link href="#Nosotros">Nosotros</Nav.Link>
+          <Nav.Link  as={Link} to="/Home">Home</Nav.Link>
+          <Nav.Link eventKey={2} as={Link} to="/Nosotros">Nosotros</Nav.Link>
           <NavDropdown title="Productos" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">
-              Microprocesadores
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Motherboards</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Memorias</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">Discos</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">
-              Placas De Video
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">Gabinetes</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/TodosLosProductos">Todos los Productos</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Microprocesadores">Microprocesadores</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Motherboards">Motherboards</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Memorias">Memorias</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Discos">Discos</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/PlacasDeVideo">Placas De Video</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Gabinetes">Gabinetes</NavDropdown.Item>
           </NavDropdown>
-          <CartWidget />
+          <Nav.Link  as={Link} to="/Carrito"><CartWidget /></Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

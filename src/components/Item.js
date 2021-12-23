@@ -1,5 +1,6 @@
 
-import { Container, Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Container, Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 const Item = ({lista}) => {
@@ -24,6 +25,7 @@ const Item = ({lista}) => {
               <ListGroup className="list-group-flush">
                 <ListGroupItem>{`Stock: ${lista.stock}`}</ListGroupItem>
               </ListGroup>
+              <Button as={Link} to= {`/DetalledelProducto/${lista.id}`}>Detalle del Producto</Button>
             </Card>
           );
         })}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
 
 const apiLista = () => {
   return new Promise((resolve, reject) => {
@@ -7,6 +8,7 @@ const apiLista = () => {
       () =>
         resolve([
           {
+            id: 1,
             name: "Procesador gamer Intel Core i9",
             descripcion:
               "Ejecuta con rapidez y eficiencia cualquier tipo de programa sin afectar el funcionamiento total del dispositivo.",
@@ -15,6 +17,7 @@ const apiLista = () => {
             stock: 10,
           },
           {
+            id: 2,
             name: "Procesador gamer Intel Core i10",
             descripcion:
               "Ejecuta con rapidez y eficiencia cualquier tipo de programa sin afectar el funcionamiento total del dispositivo.",
@@ -30,12 +33,18 @@ const apiLista = () => {
 
 const ItemListContainer = (props) => {
   let [listas, setListas] = useState([]);
+  const { id } = useParams();
+  console.log(id);
 
   useEffect(() => {
-    apiLista().then((lista) => {
-      setListas(lista);
-    });
-  }, []);
+    apiLista()
+      .then((lista) => {
+        setListas(lista);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [id]);
 
   return (
     <div className="container">
