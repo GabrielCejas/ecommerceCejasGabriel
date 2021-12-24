@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import { useParams } from "react-router-dom";
+
 
 const apiLista = () => {
   return new Promise((resolve, reject) => {
@@ -33,8 +33,6 @@ const apiLista = () => {
 
 const ItemListContainer = (props) => {
   let [listas, setListas] = useState([]);
-  const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     apiLista()
@@ -44,7 +42,7 @@ const ItemListContainer = (props) => {
       .catch((error) => {
         console.log(error);
       });
-  }, [id]);
+  }, []);
 
   return (
     <div className="container">

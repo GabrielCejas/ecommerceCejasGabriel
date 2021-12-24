@@ -2,8 +2,8 @@
 import { Container, Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
 const Item = ({lista}) => {
+
   return (
     <>
       <Container className="d-flex">
