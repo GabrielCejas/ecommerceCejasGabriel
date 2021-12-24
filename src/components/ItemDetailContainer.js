@@ -9,6 +9,7 @@ const getItem = () => {
           resolve([
             {
               id: 1,
+              categoria: 'Microprocesadores',
               name: "Procesador gamer Intel Core i9",
               descripcion:
                 "Ejecuta con rapidez y eficiencia cualquier tipo de programa sin afectar el funcionamiento total del dispositivo.",
@@ -18,15 +19,17 @@ const getItem = () => {
             },
             {
               id: 2,
-              name: "Procesador gamer Intel Core i10",
+              categoria: 'Motherboards',
+              name: "Motherboards",
               descripcion:
-                "Ejecuta con rapidez y eficiencia cualquier tipo de programa sin afectar el funcionamiento total del dispositivo.",
-              precio: 108000,
-              img: require(`../assets/i9.webp`).default,
+                "Motherboard X99+ Dual E5-2660v3 +64 Gb Ddr4 + Coolers X 2.",
+              precio: 250000,
+              img: require(`../assets/MotherboardX99.jpg`).default,
               stock: 8,
             },
             {
               id: 3,
+              categoria: 'Memorias',
               name: "Memoria RAM",
               descripcion:
                 "Características de Kingston HyperX Fury DDR4 16 GB.",

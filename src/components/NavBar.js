@@ -15,13 +15,13 @@ const NavBar = () => {
           <Nav.Link  as={Link} to="/Home">Home</Nav.Link>
           <Nav.Link eventKey={2} as={Link} to="/Nosotros">Nosotros</Nav.Link>
           <NavDropdown title="Productos" id="collasible-nav-dropdown">
-            <NavDropdown.Item as={Link} to="/TodosLosProductos">Todos los Productos</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/Microprocesadores">Microprocesadores</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/Motherboards">Motherboards</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/Memorias">Memorias</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/Discos">Discos</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/PlacasDeVideo">Placas De Video</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/Gabinetes">Gabinetes</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/categoria/TodosLosProductos">Todos los Productos</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/categoria/Microprocesadores">Microprocesadores</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/categoria/Motherboards">Motherboards</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/categoria/Memorias">Memorias</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/categoria/Discos">Discos</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/categoria/PlacasDeVideo">Placas De Video</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/categoria/Gabinetes">Gabinetes</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link  as={Link} to="/Carrito"><CartWidget /></Nav.Link>
         </Nav>
