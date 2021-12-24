@@ -33,9 +33,7 @@ const getItem = () => {
 
 const ItemDetailContainer = (props) => {
     let [producto, setProducto] = useState([]);
-    const  {id}  = useParams();
-    console.log(producto);
-   
+    const  {id}  = useParams();   
 
     useEffect(() => {
         getItem().then((item) => {

@@ -1,8 +1,7 @@
 import {Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import ItemCount from "./itemCount"
+import ItemCount from "./ItemCount"
 
 const ItemDetail = ({productoElejido}) => {
-  console.log(productoElejido[0])
     return (
         <div className="container">
         <h3>Detalle del producto</h3>
