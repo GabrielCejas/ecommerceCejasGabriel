@@ -25,6 +25,15 @@ const getItem = () => {
               img: require(`../assets/i9.webp`).default,
               stock: 8,
             },
+            {
+              id: 3,
+              name: "Memoria RAM",
+              descripcion:
+                "Características de Kingston HyperX Fury DDR4 16 GB.",
+              precio: 16000,
+              img: require(`../assets/memoriaRAM.jpg`).default,
+              stock: 15,
+            },
           ]),
           2000
         );

@@ -18,6 +18,7 @@ html * {
   color: rgb(0, 0, 0);
   font-size: 1.4rem;
 }
-.blockquote{
+.blockquote {
   min-width: 30vw !important;
 }
+
