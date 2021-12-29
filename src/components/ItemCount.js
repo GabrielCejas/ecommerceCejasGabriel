@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, Of }) => {
   let [agregarCarrito, setAgregarCarrito] = useState("");
   let [agregar, setAgregar] = useState(1);
+  console.log(Of)
 
   const onAdd = (cantidad) => {
     setAgregarCarrito(
@@ -39,7 +41,10 @@ const ItemCount = ({ stock }) => {
       <Button
         variant="warning"
         className="m-3"
-        onClick={() => onAdd(agregar)}
+        onClick={() => {
+          onAdd(agregar);
+          Of(false);
+       }}
         disabled={!stock}
       >
         Agregar al Carrito

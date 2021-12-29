@@ -1,9 +1,17 @@
 import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const ItemDetail = ({ productoElejido }) => {
   let navigate = useNavigate();
+  const[ofBoton, setOfBoton]= useState(true)
+
+  const OfButton = (() => {
+      setOfBoton(false)
+  })
+
+
   return (
     <div className="container">
       <h3>Detalle del producto</h3>
@@ -23,7 +31,7 @@ const ItemDetail = ({ productoElejido }) => {
           <ListGroup className="list-group-flush">
             <ListGroupItem>{`Stock: ${productoElejido[0].stock}`}</ListGroupItem>
           </ListGroup>
-          <ItemCount stock={productoElejido[0].stock} />
+          {ofBoton && <ItemCount stock={productoElejido[0].stock} Of={OfButton}/>}
           <Button
             variant="warning"
             className="m-3"
