@@ -1,12 +1,16 @@
-
-import { Container, Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
+import {
+  Container,
+  Card,
+  ListGroup,
+  ListGroupItem,
+  Button,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Item = ({lista}) => {
-
+const Item = ({ lista }) => {
   return (
     <>
-      <Container className="d-flex">
+      <Container className="d-flex flex-wrap">
         {lista.map((lista) => {
           return (
             <Card
@@ -14,7 +18,10 @@ const Item = ({lista}) => {
               style={{ width: "18rem" }}
               className="container m-5 col-4"
             >
-              <Card.Img variant="top" src={lista.img} />
+              <Card.Img
+                variant="top"
+                src={require(`../assets/${lista.img}`).default}
+              />
               <Card.Body>
                 <Card.Title>{lista.name}</Card.Title>
                 <Card.Text>{lista.descripcion}</Card.Text>
@@ -25,7 +32,9 @@ const Item = ({lista}) => {
               <ListGroup className="list-group-flush">
                 <ListGroupItem>{`Stock: ${lista.stock}`}</ListGroupItem>
               </ListGroup>
-              <Button as={Link} to= {`/DetalledelProducto/${lista.id}`}>Detalle del Producto</Button>
+              <Button as={Link} to={`/DetalledelProducto/${lista.id}`}>
+                Detalle del Producto
+              </Button>
             </Card>
           );
         })}

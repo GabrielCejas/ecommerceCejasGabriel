@@ -4,7 +4,8 @@ import NavBar from "./components/NavBar.js";
 import Home from "./page/Home"
 import ItemListContainer from "./components/ItemListContainer.js";
 import ItemDetailContainer from "./components/ItemDetailContainer.js";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer.js";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/categoria/:id" element={<ItemListContainer greeting="Mercado Informatico" />}/>
         <Route path="/DetalledelProducto/:id" element={<ItemDetailContainer />}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

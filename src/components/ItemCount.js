@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({ stock }) => {
   let [agregarCarrito, setAgregarCarrito] = useState("");
   let [agregar, setAgregar] = useState(1);
 
