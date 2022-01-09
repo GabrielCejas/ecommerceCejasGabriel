@@ -35,3 +35,39 @@ html * {
   height: 15vh;
   background-color: #ffec3e;
 }
+.mx-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.carritoTitulo {
+  margin-left: auto;
+  margin-right: auto;
+}
+.carritoCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+  margin: 10px;
+}
+.carritoCard > img {
+  width: 15%;
+}
+.carritoContenedor {
+  background-color: #f0e79a;
+  margin: 10px;
+  border-radius: 10px;
+}
+.CarritoBoton {
+  border-radius: 5px;
+  padding: 2px 5px;
+  background-color: #ecf65c;
+  margin: 20px;
+  font-weight: 600;
+  border-color: aliceblue;
+}
+.CarritoBoton:hover {
+  background-color: #ffe600;
+}

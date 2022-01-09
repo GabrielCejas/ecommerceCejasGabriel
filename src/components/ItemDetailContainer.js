@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 const getApi = async () => {
   fetch("http://localhost:3000/api")
     .then((res) => res.json())
-    .then((res) => console.log(res));
+    .catch((res) => console.log(res));
 };
 
 const ItemDetailContainer = () => {

@@ -1,17 +1,15 @@
 /* eslint-disable no-unused-expressions */
-import React, { useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Card } from "react-bootstrap";
+import { useContexto } from "../CartContext";
 
-const ItemCount = ({ stock, Of }) => {
-  let [agregarCarrito, setAgregarCarrito] = useState("");
+const ItemCount = ({ stock }) => {
   let [agregar, setAgregar] = useState(1);
-  console.log(Of)
+  const { cantidadItems } = useContexto();
 
-  const onAdd = (cantidad) => {
-    setAgregarCarrito(
-      (agregarCarrito = `Se agrego al carrito ${cantidad} unidades`)
-    );
-  };
+  useEffect(() => {
+    cantidadItems(agregar);
+  }, [agregar]);
 
   const clickAdd = (stock) => {
     if (agregar < stock) {
@@ -37,18 +35,6 @@ const ItemCount = ({ stock, Of }) => {
           -
         </Card.Link>
       </Card.Body>
-      <p>{agregarCarrito}</p>
-      <Button
-        variant="warning"
-        className="m-3"
-        onClick={() => {
-          onAdd(agregar);
-          Of(false);
-       }}
-        disabled={!stock}
-      >
-        Agregar al Carrito
-      </Button>
     </>
   );
 };
