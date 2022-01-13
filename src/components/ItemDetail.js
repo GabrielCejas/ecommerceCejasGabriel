@@ -8,7 +8,6 @@ const ItemDetail = ({ productoElejido }) => {
   let navigate = useNavigate();
   const [ofBoton, setOfBoton] = useState(true);
   const { addItem, cantidadTotal } = useContexto();
-
   const OfButton = () => {
     setOfBoton(false);
   };
@@ -46,7 +45,7 @@ const ItemDetail = ({ productoElejido }) => {
               onAdd({
                 name: productoElejido[0].name,
                 img: productoElejido[0].img,
-                precio: productoElejido[0].precio,
+                precio: productoElejido[0].precio * cantidadTotal,
                 id: productoElejido[0].id,
                 cantidad: cantidadTotal,
               });

@@ -12,20 +12,19 @@ const CartContext = ({ children }) => {
   const [cantidadTotal, setCantidadTotal] = useState(0);
   const [carrito, setCarrito] = useState([]);
   const [productsInCart, setProductsInCart] = useState(0);
+  const [precioTotal, setPrecioTotal] = useState(0);
 
   const isInCart = (id) => {
-    console.log(id);
     return carrito.some((item) => item.id === id);
   };
 
-  const addItem = (producto, cantidad) => {
+  const addItem = (producto) => {
     setCarrito(() => {
-      console.log(isInCart(producto.id));
       if (isInCart(producto.id)) {
         return setCarrito(
           carrito.map((item) =>
             item.id === producto.id
-              ? { ...item, cantidad: item.cantidad + producto.cantidad }
+              ? { ...item, cantidad: item.cantidad + producto.cantidad, precio: item.precio + producto.precio }
               : item
           )
         );
@@ -34,6 +33,12 @@ const CartContext = ({ children }) => {
       }
     });
   };
+
+  
+useEffect(() =>{
+  let precioTotalCart = carrito?.map((item) => item.precio).reduce((prev, curr) => prev + curr, 0);
+  setPrecioTotal(precioTotalCart);
+},[carrito])
 
   const cantidadItems = (num) => {
     setCantidadTotal(num);
@@ -54,6 +59,7 @@ const CartContext = ({ children }) => {
       return acc + item.cantidad;
     }, 0);
     setProductsInCart(inCarrito);
+    
   }, [carrito]);
 
   const appContexto = {
@@ -65,6 +71,7 @@ const CartContext = ({ children }) => {
     clear,
     cantidadItems,
     productsInCart,
+    precioTotal,
   };
 
   return <Provider value={appContexto}>{children}</Provider>;

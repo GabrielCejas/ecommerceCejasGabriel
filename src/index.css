@@ -68,6 +68,17 @@ html * {
   font-weight: 600;
   border-color: aliceblue;
 }
+.botonCarritoVolver {
+  border-radius: 8px;
+  padding: 3px 10px;
+  background-color: #ecf65c;
+  margin: 20px;
+  font-weight: 600;
+  border-color: aliceblue;
+}
 .CarritoBoton:hover {
   background-color: #ffe600;
+}
+.h4CarritoVolver {
+  margin: 20px;
 }
