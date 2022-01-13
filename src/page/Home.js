@@ -7,7 +7,7 @@ const Home = () => {
       <h1 className="greeting p-4">
         Bienvenidos a nuestro mercado informatico
       </h1>
-      <Carousel fade className="container">
+      <Carousel fade className="container my-4">
         <Carousel.Item>
           <img
             className="imgCarousel d-block w-100"

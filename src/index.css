@@ -3,6 +3,9 @@ html * {
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: #e0d7d7;
+}
 #root {
   display: flex;
   flex-direction: column;
@@ -17,6 +20,13 @@ html * {
 .greeting {
   text-align: center;
   background-color: #ffec3e;
+}
+.titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: black !important;
+  text-shadow: 2px 4px 2px white;
 }
 .botonMasMenos {
   text-decoration: none;
@@ -51,19 +61,23 @@ html * {
   align-items: center;
   gap: 100px;
   margin: 10px;
+  border-bottom: 1px solid rgb(126, 120, 120);
 }
 .carritoCard > img {
   width: 15%;
+  margin-bottom: 10px;
 }
 .carritoContenedor {
-  background-color: #f0e79a;
+  background-color: #ffff72;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 33px;
+  background: #f1f36d;
+  box-shadow: 8px 8px 16px #7b7b7b, -8px -8px 16px #ffffff;
 }
 .CarritoBoton {
   border-radius: 5px;
   padding: 2px 5px;
-  background-color: #ecf65c;
+  background-color: #fbc02d;
   margin: 20px;
   font-weight: 600;
   border-color: aliceblue;
@@ -71,14 +85,39 @@ html * {
 .botonCarritoVolver {
   border-radius: 8px;
   padding: 3px 10px;
-  background-color: #ecf65c;
+  background-color: #fbc02d;
   margin: 20px;
   font-weight: 600;
   border-color: aliceblue;
 }
 .CarritoBoton:hover {
-  background-color: #ffe600;
+  background-color: #c17900;
+  color: aliceblue;
 }
 .h4CarritoVolver {
   margin: 20px;
+}
+.carritoContenedor > img {
+  max-width: 100px;
+}
+.nombre {
+  width: 30%;
+}
+.Precio,
+.Cantidad {
+  width: 20%;
+}
+.buttonDelete {
+  border-radius: 50%;
+  padding: 5px;
+  border: none;
+  box-shadow: 3px 3px 5px #7b7b7b;
+}
+.btnFooter {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: black !important;
+}
+.btnFooter:hover {
+  font-weight: 700;
 }

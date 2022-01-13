@@ -16,15 +16,22 @@ const Cart = () => {
               return (
                 <div className="carritoCard">
                   <img src={imagen} />
-                  <h5>{item.name}</h5>
-                  <h5>Precio: ${item.precio}</h5>
-                  <h5>Cantidad: {item.cantidad}</h5>
-                  <button onClick={() => removeItem(item.id)}>❌</button>
+                  <h5 className="nombre">{item.name}</h5>
+                  <h5 className="Precio">Precio: ${item.precio}</h5>
+                  <h5 className="Cantidad">Cantidad: {item.cantidad}</h5>
+                  <button
+                    className="buttonDelete"
+                    onClick={() => removeItem(item.id)}
+                  >
+                    ❌
+                  </button>
                 </div>
               );
             })}
-          <h5>Precio Total: {precioTotal}</h5>
-          <button className="botonCarritoVolver">Terminar mi Compra</button>
+          <h5>Precio Total: ${precioTotal}</h5>
+          <button className="botonCarritoVolver CarritoBoton">
+            Terminar mi Compra
+          </button>
           <button className="CarritoBoton" onClick={clear}>
             Vaciar carrito
           </button>
