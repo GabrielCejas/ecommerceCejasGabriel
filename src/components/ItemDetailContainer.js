@@ -1,27 +1,24 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-
-const getApi = async () => {
-  fetch("http://localhost:3000/api")
-    .then((res) => res.json())
-    .catch((res) => console.log(res));
-};
+import { bDato } from "../firebase/firebase";
+import { getDoc, collection, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   let [producto, setProducto] = useState([]);
   const { id } = useParams();
-
-  const getApi = async () => {
-    fetch("http://localhost:3000/api")
-      .then((res) => res.json())
-      .then((item) => {
-        setProducto(item.filter((lista) => lista.id == id));
-      });
-  };
-
   useEffect(() => {
-    getApi();
+    const productosCollection = collection(bDato, "productos");
+
+    const refDoc = doc(productosCollection, id);
+    console.log(refDoc);
+    getDoc(refDoc)
+      .then((resultado) => {
+        setProducto(resultado.data());
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, [id]);
 
   return (

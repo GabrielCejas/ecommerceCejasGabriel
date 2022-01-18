@@ -1,27 +1,37 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import { bDato } from "../firebase/firebase";
+import { getDocs, query, collection, where } from "firebase/firestore";
 
 const ItemListContainer = (props) => {
   let [listas, setListas] = useState([]);
-  const { id } = useParams();
-
-  const getApi = async () => {
-    fetch("http://localhost:3000/api")
-      .then((res) => res.json())
-      .then((lista) => {
-        id === "TodosLosProductos"
-          ? setListas(lista)
-          : setListas(lista.filter((lista) => lista.categoria == id));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
+  const { categoria } = useParams();
   useEffect(() => {
-    getApi();
-  }, [id]);
+    const productosCollection = collection(bDato, "productos");
+    if (categoria) {
+      const consulta = query(
+        productosCollection,
+        where("categoria", "==", categoria)
+      );
+      getDocs(consulta)
+        .then(({ docs }) => {
+          setListas(docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    if (categoria == "TodosLosProductos") {
+      getDocs(productosCollection)
+        .then(({ docs }) => {
+          setListas(docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [categoria]);
 
   return (
     <div className="container">

@@ -31,7 +31,7 @@
             "id": 4,
             "categoria": "Microprocesadores",
             "name": "Procesador gamer Intel Core i5",
-            "descripcion": "Intel Core i5-10600K BX8070110600K de 6 núcleos y  4.8GHz de frecuencia con gráfica integrada Nuevo ",
+            "descripcion": "Intel Core i5-10600K BX8070110600K de 6 núcleos y  4.8GHz de frecuencia con gráfica integrada Nuevo. ",
             "precio": 58000,
             "img": "i5.webp",
             "stock": 15
@@ -94,7 +94,7 @@
             "id": 11,
             "categoria": "Motherboards",
             "name": "Motherboard B460m-a R2.0 Asus Prime",
-            "descripcion":"Motherboard B460m-a R2.0 Asus Prime Intel S1200 Pcie Pcreg, Chipset: H470, DDR4, Socket: LGA1200,",
+            "descripcion":"Motherboard B460m-a R2.0 Asus Prime Intel S1200 Pcie Pcreg, Chipset: H470, DDR4, Socket: LGA1200.",
             "precio": 11399,
             "img": "Motherboard B460m.webp",
             "stock": 6
