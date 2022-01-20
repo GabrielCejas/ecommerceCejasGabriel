@@ -11,7 +11,6 @@ const ItemDetailContainer = () => {
     const productosCollection = collection(bDato, "productos");
 
     const refDoc = doc(productosCollection, id);
-    console.log(refDoc);
     getDoc(refDoc)
       .then((resultado) => {
         setProducto(resultado.data());
@@ -23,7 +22,7 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-      <ItemDetail productoElejido={producto} />
+      <ItemDetail productoElejido={producto} id={id} />
     </>
   );
 };

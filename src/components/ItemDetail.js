@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useContexto } from "../CartContext";
 
-const ItemDetail = ({ productoElejido }) => {
+const ItemDetail = ({ productoElejido, id }) => {
   let navigate = useNavigate();
   const [ofBoton, setOfBoton] = useState(true);
   const { addItem, cantidadTotal } = useContexto();
@@ -44,7 +44,7 @@ const ItemDetail = ({ productoElejido }) => {
                 name: productoElejido.name,
                 img: productoElejido.img,
                 precio: productoElejido.precio * cantidadTotal,
-                id: productoElejido.id,
+                id: id,
                 cantidad: cantidadTotal,
               });
             }}

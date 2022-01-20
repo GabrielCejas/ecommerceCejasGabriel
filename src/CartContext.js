@@ -24,7 +24,11 @@ const CartContext = ({ children }) => {
         return setCarrito(
           carrito.map((item) =>
             item.id === producto.id
-              ? { ...item, cantidad: item.cantidad + producto.cantidad, precio: item.precio + producto.precio }
+              ? {
+                  ...item,
+                  cantidad: item.cantidad + producto.cantidad,
+                  precio: item.precio + producto.precio,
+                }
               : item
           )
         );
@@ -34,11 +38,12 @@ const CartContext = ({ children }) => {
     });
   };
 
-  
-useEffect(() =>{
-  let precioTotalCart = carrito?.map((item) => item.precio).reduce((prev, curr) => prev + curr, 0);
-  setPrecioTotal(precioTotalCart);
-},[carrito])
+  useEffect(() => {
+    let precioTotalCart = carrito
+      ?.map((item) => item.precio)
+      .reduce((prev, curr) => prev + curr, 0);
+    setPrecioTotal(precioTotalCart);
+  }, [carrito]);
 
   const cantidadItems = (num) => {
     setCantidadTotal(num);
@@ -59,7 +64,6 @@ useEffect(() =>{
       return acc + item.cantidad;
     }, 0);
     setProductsInCart(inCarrito);
-    
   }, [carrito]);
 
   const appContexto = {
