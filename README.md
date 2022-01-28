@@ -20,8 +20,8 @@ Proyecto de sitio web sobre un sitio web de un comercio electrónico
 ## Como lo pruebo
 
 - Clonar el repositorio
-- Desde la terminal, situado en la carpeta de proyecto ejecutar el comando npm i para que e instalen las dependencias
-- Cuando termine, utiliza el comendo: npm start
+- Desde la terminal, situado en la carpeta del proyecto ejecutar el comando npm i para que se instalen las dependencias
+- Cuando termine, utiliza el comando: npm start para iniciar
 - Se iniciara el dashboard de expo en el navegador
 
 #### Realizado por: Cejas Gabriel
