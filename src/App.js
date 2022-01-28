@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer.js";
 import CustomProvider from "./CartContext.js";
 import Cart from "./components/Cart.js";
+import Registro from "./page/Registro";
+import CrearCuenta from "./page/CrearCuenta";
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
             path="/DetalledelProducto/:id"
             element={<ItemDetailContainer />}
           />
+          <Route path="/registro" element={<Registro />} />
+          <Route path="/crearCuenta" element={<CrearCuenta />} />
+          <Route path="/Carrito" element={<Cart />} />
           <Route path="/Carrito" element={<Cart />} />
         </Routes>
         <Footer />
@@ -32,5 +37,4 @@ function App() {
     </CustomProvider>
   );
 }
-
 export default App;

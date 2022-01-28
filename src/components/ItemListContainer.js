@@ -3,6 +3,7 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { bDato } from "../firebase/firebase";
 import { getDocs, query, collection, where } from "firebase/firestore";
+import { Alert } from "bootstrap";
 
 const ItemListContainer = (props) => {
   let [listas, setListas] = useState([]);
@@ -19,7 +20,7 @@ const ItemListContainer = (props) => {
           setListas(docs.map((doc) => ({ id: doc.id, ...doc.data() })));
         })
         .catch((error) => {
-          console.log(error);
+          alert(error);
         });
     }
     if (categoria == "TodosLosProductos") {
@@ -28,7 +29,7 @@ const ItemListContainer = (props) => {
           setListas(docs.map((doc) => ({ id: doc.id, ...doc.data() })));
         })
         .catch((error) => {
-          console.log(error);
+          alert(error);
         });
     }
   }, [categoria]);

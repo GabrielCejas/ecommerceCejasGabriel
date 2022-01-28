@@ -6,6 +6,9 @@ html * {
 body {
   background-color: #e0d7d7;
 }
+.nav {
+  font-size: 1.3rem;
+}
 #root {
   display: flex;
   flex-direction: column;
@@ -120,4 +123,31 @@ body {
 }
 .btnFooter:hover {
   font-weight: 700;
+}
+.marcasTitulo {
+  text-align: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #fbc02d;
+}
+.marcasContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 3rem;
+  background-color: #ebebeb;
+}
+.registro,
+.crearCuenta {
+  display: flex;
+  background-color: #ededed;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+.registroTitle {
+  text-align: center;
+}
+.registroButton {
+  color: #000000 !important;
 }

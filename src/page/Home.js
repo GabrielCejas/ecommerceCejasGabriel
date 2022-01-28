@@ -41,6 +41,25 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <div className="marcasTitulo">
+        <h2>Nuestras Marcas</h2>
+      </div>
+      <div className="marcasContainer">
+        <h4>Geforce</h4>
+        <h4>Intel</h4>
+        <h4>Asus</h4>
+        <h4>Western Digital</h4>
+        <h4>Kingston</h4>
+        <h4>AMD</h4>
+      </div>
+      <div className="marcasTitulo">
+        <h2>Características</h2>
+      </div>
+      <div className="marcasContainer">
+        <h4>Soporte 24/7</h4>
+        <h4>Grandes plazos de entrega</h4>
+        <h4>Los mejores precios</h4>
+      </div>
     </>
   );
 };
