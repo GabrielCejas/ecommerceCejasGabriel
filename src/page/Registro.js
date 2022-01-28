@@ -76,9 +76,6 @@ const Registro = () => {
             </Alert>
           )}
         </Form.Group>
-        <Alert className="col-xl-12 p-0 mb-2" variant="danger">
-          {error}
-        </Alert>
         <Button bg="dark" variant="dark" type="submit" className="px-4">
           Registro!
         </Button>
