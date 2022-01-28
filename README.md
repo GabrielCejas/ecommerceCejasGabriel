@@ -3,9 +3,9 @@
 Proyecto de sitio web sobre un sitio web de un comercio electrónico
 
 **Video Demo**
-![Demonstration web](./assets/Animation.gif)
+![Demonstration web](./src/assets/Animation.gif)
 
-## Desarrolle un e-commerce desde cero implementando la libreria de React JS y firebase.
+### Desarrolle un e-commerce desde cero implementando la libreria de React JS y firebase.
 
 ## Tecnologias usadas
 
